@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Люблю Дашу ❤️</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      background:
+        radial-gradient(circle at 50% 40%, #ff5c93 0%, transparent 30%),
+        radial-gradient(circle at 20% 80%, #8b2f6b 0%, transparent 35%),
+        radial-gradient(circle at 80% 20%, #542c83 0%, transparent 35%),
+        #160d20;
+
+      color: white;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .container {
+      position: relative;
+      text-align: center;
+      z-index: 2;
+      padding: 60px;
+    }
+
+    .glow {
+      position: absolute;
+      inset: 50% auto auto 50%;
+      width: 420px;
+      height: 420px;
+      transform: translate(-50%, -50%);
+      background: rgba(255, 70, 140, 0.18);
+      filter: blur(80px);
+      border-radius: 50%;
+      z-index: -1;
+    }
+
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: clamp(70px, 12vw, 150px);
+      font-weight: 400;
+      line-height: 1;
+      color: #fff;
+
+      text-shadow:
+        0 0 10px rgba(255,255,255,.8),
+        0 0 30px rgba(255,75,145,.8),
+        0 0 70px rgba(255,75,145,.5);
+
+      animation: pulse 3s ease-in-out infinite;
+    }
+
+    .heart {
+      display: inline-block;
+      animation: heartbeat 1.5s infinite;
+    }
+
+    .author {
+      margin-top: 25px;
+      font-size: 13px;
+      font-weight: 300;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.65);
+    }
+
+    .line {
+      width: 60px;
+      height: 1px;
+      margin: 20px auto 0;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.7),
+        transparent
+      );
+    }
+
+    /* Плаваючі сердечка */
+    .floating-heart {
+      position: fixed;
+      bottom: -30px;
+      color: #ff8db7;
+      font-size: 18px;
+      opacity: .7;
+      animation: floatUp linear infinite;
+      pointer-events: none;
+    }
+
+    .h1 { left: 10%; animation-duration: 8s; }
+    .h2 { left: 25%; animation-duration: 11s; animation-delay: 2s; }
+    .h3 { left: 45%; animation-duration: 9s; animation-delay: 4s; }
+    .h4 { left: 70%; animation-duration: 12s; animation-delay: 1s; }
+    .h5 { left: 88%; animation-duration: 10s; animation-delay: 3s; }
+
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      15% { transform: scale(1.25); }
+      30% { transform: scale(1); }
+      45% { transform: scale(1.15); }
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.02);
+      }
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+      }
+
+      10% {
+        opacity: .7;
+      }
+
+      90% {
+        opacity: .5;
+      }
+
+      100% {
+        transform: translateY(-110vh) rotate(25deg);
+        opacity: 0;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 30px;
+      }
+
+      .glow {
+        width: 280px;
+        height: 280px;
+      }
+
+      .author {
+        font-size: 11px;
+        letter-spacing: 3px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="floating-heart h1">♡</div>
+  <div class="floating-heart h2">♥</div>
+  <div class="floating-heart h3">♡</div>
+  <div class="floating-heart h4">♥</div>
+  <div class="floating-heart h5">♡</div>
+
+  <main class="container">
+    <div class="glow"></div>
+
+    <h1>
+      Люблю Дашу <span class="heart">♥</span>
+    </h1>
+
+    <div class="author">by Mikalo</div>
+    <div class="line"></div>
+  </main>
+
+</body>
+</html>
